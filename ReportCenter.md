@@ -6,6 +6,9 @@ Central status file for the 3 active jobs, consolidated into this window.
 Last synced: 2026-09-07 03:45 UTC
 อัปเดตล่าสุด: 2026-09-07 03:45 UTC
 
+> 📦 **Migrating:** coordination is moving to a Claude Code session running directly on the server (`E:\skill-portal`), which has real access to the local `ReportCenter.md`. See `HANDOFF_TO_SERVER.md` in this repo. This file stays as a last-known snapshot until the server-side session confirms it has taken over.
+> 📦 **กำลังย้าย:** การคุมงานย้ายไป session Claude Code ที่รันตรงบนเซิร์ฟเวอร์ (`E:\skill-portal`) ซึ่งเข้าถึงไฟล์ ReportCenter.md จริงได้ ดู `HANDOFF_TO_SERVER.md` ในโฟลเดอร์นี้ ไฟล์นี้จะเก็บไว้เป็นสถานะล่าสุดที่รู้ จนกว่า session บนเซิร์ฟเวอร์จะยืนยันว่ารับช่วงต่อแล้ว
+
 > ⚠️ Note: all 3 sessions report they wrote their own `ReportCenter.md` locally, but that file has not reached GitHub — `skill-dev-portal` only has a `main` branch on the remote, with no such file on it. Their updates are still sitting on your local machine (bridge/`E:\skill-portal`), not synced here yet. This section below is rebuilt from each session's status feed, not from that local file.
 > ไฟล์ ReportCenter.md ที่ทั้ง 3 งานบอกว่าอัปเดตแล้ว ยังไม่ถูก push ขึ้น GitHub (repo skill-dev-portal มีแค่ branch main และไม่มีไฟล์นี้อยู่) แปลว่าข้อมูลยังอยู่ที่เครื่องคุณเท่านั้น ด้านล่างนี้ผมประมวลจากสถานะ session แทน ไม่ใช่จากไฟล์จริงบนเครื่องคุณ
 
