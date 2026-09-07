@@ -3,11 +3,11 @@
 Central status file for the 3 active jobs, consolidated into this window.
 ไฟล์กลางสำหรับติดตามสถานะ 3 งานที่กำลังทำอยู่ รวมมาไว้ในหน้าต่างนี้
 
-Last synced: 2026-09-07 03:45 UTC
-อัปเดตล่าสุด: 2026-09-07 03:45 UTC
+Last synced: 2026-09-07 16:15 UTC
+อัปเดตล่าสุด: 2026-09-07 16:15 UTC
 
-> 📦 **Migrating:** coordination is moving to a Claude Code session running directly on the server (`E:\skill-portal`), which has real access to the local `ReportCenter.md`. See `HANDOFF_TO_SERVER.md` in this repo. This file stays as a last-known snapshot until the server-side session confirms it has taken over.
-> 📦 **กำลังย้าย:** การคุมงานย้ายไป session Claude Code ที่รันตรงบนเซิร์ฟเวอร์ (`E:\skill-portal`) ซึ่งเข้าถึงไฟล์ ReportCenter.md จริงได้ ดู `HANDOFF_TO_SERVER.md` ในโฟลเดอร์นี้ ไฟล์นี้จะเก็บไว้เป็นสถานะล่าสุดที่รู้ จนกว่า session บนเซิร์ฟเวอร์จะยืนยันว่ารับช่วงต่อแล้ว
+> ✅ **Migration confirmed:** a Claude Code session now runs directly on MyServ (`session_01WiKLvTQjBG6Yx5Fd5Pvc2n`), confirmed real local access (Administrator, `E:/skill-portal`, repo `skill-dev-portal` on `main`). It identifies as the OpenClaw thread, working in `OpenClaw-Master-Control-Center`, following a local `MASTER/REPORT_CENTER.md` protocol. The old Openclaw session (`session_01BvWdzqwY4g2HVYY29S8qNC`) is stale/superseded — MyServ's earlier Tailscale-key-expiry outage (fixed) was followed by a broader connectivity drop that disconnected all bridge sessions; the new session was started once access was restored.
+> ✅ **ยืนยันการย้ายแล้ว:** มี session Claude Code รันตรงบน MyServ แล้ว (`session_01WiKLvTQjBG6Yx5Fd5Pvc2n`) ยืนยันว่าเข้าถึงเครื่องจริงได้ (Administrator, `E:/skill-portal`, repo `skill-dev-portal` บน `main`) ระบุตัวเองว่าเป็นสาย OpenClaw ทำงานในโฟลเดอร์ `OpenClaw-Master-Control-Center` ตามโปรโตคอล `MASTER/REPORT_CENTER.md` ในเครื่อง ส่วน session Openclaw เก่า (`session_01BvWdzqwY4g2HVYY29S8qNC`) ค้าง/ถูกแทนที่แล้ว — หลัง Tailscale key หมดอายุ (แก้แล้ว) มีปัญหาการเชื่อมต่อที่กว้างกว่านั้นทำให้ bridge session ทั้งหมดหลุด แล้ว session ใหม่นี้ถูกเปิดหลังจากกลับมาเข้าถึงได้
 
 > ⚠️ Note: all 3 sessions report they wrote their own `ReportCenter.md` locally, but that file has not reached GitHub — `skill-dev-portal` only has a `main` branch on the remote, with no such file on it. Their updates are still sitting on your local machine (bridge/`E:\skill-portal`), not synced here yet. This section below is rebuilt from each session's status feed, not from that local file.
 > ไฟล์ ReportCenter.md ที่ทั้ง 3 งานบอกว่าอัปเดตแล้ว ยังไม่ถูก push ขึ้น GitHub (repo skill-dev-portal มีแค่ branch main และไม่มีไฟล์นี้อยู่) แปลว่าข้อมูลยังอยู่ที่เครื่องคุณเท่านั้น ด้านล่างนี้ผมประมวลจากสถานะ session แทน ไม่ใช่จากไฟล์จริงบนเครื่องคุณ
@@ -15,15 +15,15 @@ Last synced: 2026-09-07 03:45 UTC
 ---
 
 ## 1. Openclaw
-Repo: `StartupDevp/skill-dev-portal` (branch `main`)
+Repo: `StartupDevp/skill-dev-portal` (branch `main`), working dir `OpenClaw-Master-Control-Center`
 
-- **Status:** 🔴 Still blocked — awaiting your decision
-- **Last activity:** 2026-09-07 02:41
-- **What's happening:** Session says it updated its own ReportCenter.md + worklog, but is still stuck on the same open question as before.
-- **Needs from you:** Pick one — try `qwen2.5-coder:3b`, break jobs into smaller steps, review the no-internet rule, or pause.
-- **Session:** `session_01BvWdzqwY4g2HVYY29S8qNC`
+- **Status:** 🟡 Running on-server — plan relayed, awaiting first result
+- **Last activity:** 2026-09-07 16:14 (chunking plan delivered)
+- **What's happening:** New session confirmed real local access on MyServ. The chunking plan (break long jobs into small steps, checkpoint each, keep no-internet rule, test on one small job before resuming the full CRAB queue) was relayed to it.
+- **Needs from you:** Nothing right now — waiting on the test-job result.
+- **Session:** `session_01WiKLvTQjBG6Yx5Fd5Pvc2n` (supersedes stale `session_01BvWdzqwY4g2HVYY29S8qNC`)
 
-ยังติดขัดเหมือนเดิม รอคุณตัดสินใจ: ลองใช้ qwen2.5-coder:3b / แบ่งงานเป็นชิ้นเล็กลง / ทบทวนกฎห้ามต่อเน็ต / หรือพักงานนี้ไว้ก่อน
+Session ใหม่ยืนยันเข้าถึงเครื่อง MyServ ได้จริงแล้ว ส่งแผนแบ่งงานเป็นชิ้นเล็กเข้าไปแล้ว รอผลทดสอบงานชิ้นเล็กก่อน ไม่ต้องตัดสินใจอะไรเพิ่มตอนนี้
 
 ---
 
