@@ -30,13 +30,13 @@ Session ใหม่ยืนยันเข้าถึงเครื่อง
 ## 2. WebGreenStore
 Repo: `StartupDevp/skill-dev-portal` (branch `worktree-greenstor-diagram-realism`)
 
-- **Status:** 🟢 Review ready — stopped, waiting on you
-- **Last activity:** 2026-09-07 03:40
-- **What's happening:** "GreenStor entry consolidated; ReportCenter.md updated" — the earlier pending approval has cleared.
-- **Needs from you:** Nothing blocking; ready for your review whenever you want.
+- **Status:** 🟡 Closeout plan relayed — awaiting completion
+- **Last activity:** 2026-09-07 16:19 (closeout plan delivered)
+- **What's happening:** Sent the 4-step closeout plan: inventory remaining items, verify renders/diagrams match spec, merge the worktree branch, close out documentation.
+- **Needs from you:** Nothing right now — waiting for it to work through the steps.
 - **Session:** `session_01STaKGbc49ic9WmnrWa4WhH`
 
-งานนี้หยุดแล้วและพร้อมให้รีวิว ไม่มีอะไรค้างรออนุมัติแล้ว
+ส่งแผนปิดงาน 4 ขั้นตอนเข้าไปแล้ว รอผลดำเนินการ ไม่ต้องตัดสินใจอะไรเพิ่มตอนนี้
 
 ---
 
