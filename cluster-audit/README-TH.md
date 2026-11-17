@@ -704,6 +704,9 @@ fmt() {
     [ -n "$v" ] && printf '%s' "$v" || printf 'N/A'
 }
 
+# หมายเหตุ: ครอบทั้งหมดไว้ในฟังก์ชัน main เพื่อให้ bash อ่านสคริปต์ครบก่อนรัน
+# (กันกรณีรันผ่าน "bash -s" แล้วคำสั่งภายในไปอ่าน stdin ของสคริปต์เสียเอง)
+main() {
 host=$(hostname -s)
 os=$( (. /etc/os-release 2>/dev/null && echo "$PRETTY_NAME") | fmt)
 kernel=$(uname -r | fmt)
@@ -747,6 +750,10 @@ bmc_fw=$(timeout 20 ipmitool mc info 2>/dev/null | awk -F': *' '/^Firmware Revis
 bios=$(dmidecode -s bios-version 2>/dev/null | head -n1 | fmt)
 
 echo "${host},${os},${kernel},${doca_ofed},${cx8_count},${cx8_fw},${gpu_count},${gpu_driver},${gpu_vbios},${cuda},${fabricmanager},${bmc_fw},${bios},${cx8_detail}"
+}
+
+main "$@" </dev/null
+exit $?
 ```
 
 ### 15.2 `check_versions.sh` (วิธีที่ 2: Bash ขนาน)
