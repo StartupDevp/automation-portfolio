@@ -298,10 +298,10 @@ CX_DEVID=XXXX ./audit.sh test b300-node01 10.10.10.101
 ### 6.7 ถ้าบางคอลัมน์เป็น N/A
 | คอลัมน์ | สาเหตุที่เป็นไปได้ | วิธีแก้ |
 |---|---|---|
-| `doca_ofed` | ยังไม่ได้ติดตั้ง DOCA-OFED / ไม่พบ `ofed_info` | `ssh gsops@node 'dpkg -l \| grep -i -E "doca\|ofed"'` |
+| `doca_ofed` | ยังไม่ได้ติดตั้ง DOCA-OFED / ไม่พบ `ofed_info` | บนโหนดรัน `dpkg -l` แล้วค้นหาคำว่า doca หรือ ofed ในผลลัพธ์ |
 | `cx8_*` | ไม่มี `mstflint` / Device ID ไม่ตรง | ติดตั้ง `mstflint` (5.4) และตั้ง `CX_DEVID` (6.6) |
 | `gpu_*`, `cuda` | GPU Driver ไม่ทำงาน | บนโหนดรัน `nvidia-smi` ดู error |
-| `fabricmanager` | ไม่ได้ติดตั้งแพ็กเกจ `nvidia-fabricmanager` | ตรวจ `dpkg -l \| grep fabric` |
+| `fabricmanager` | ไม่ได้ติดตั้งแพ็กเกจ `nvidia-fabricmanager` | บนโหนดรัน `dpkg -l` แล้วค้นหาคำว่า fabricmanager |
 | `bmc_fw` | โมดูล IPMI ไม่ทำงาน / OS มองไม่เห็น BMC | `sudo ipmitool mc info` ดู error (ข้อมูล BMC เต็มรูปแบบดูจาก Redfish อยู่แล้ว) |
 | `bios` | ไม่มี `dmidecode` | ติดตั้ง `dmidecode` |
 
